@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "prefixer", "prefixer\prefixer.vcproj", "{0CFFDD18-216F-4EAF-AC7F-8F9E7FB867CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CFFDD18-216F-4EAF-AC7F-8F9E7FB867CE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0CFFDD18-216F-4EAF-AC7F-8F9E7FB867CE}.Debug|Win32.Build.0 = Debug|Win32
+		{0CFFDD18-216F-4EAF-AC7F-8F9E7FB867CE}.Release|Win32.ActiveCfg = Release|Win32
+		{0CFFDD18-216F-4EAF-AC7F-8F9E7FB867CE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

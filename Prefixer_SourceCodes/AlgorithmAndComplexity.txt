@@ -1,0 +1,111 @@
+*******Algorithm and Complexity Analysis of the program*********
+
+(Written as much simply to provide a basic idea about how the program is written)
+
+
+
+Main Steps :
+	* It takes a mathematical expression - a string(infixString).
+	* It builds an Expression Tree from that infix string
+	* It reduces the Expression Tree if -r flag is triggered.
+	* It runs an inorder tree walk which produces prefix expression of the given infix expression
+	
+	
+Building an Expression Tree from an infix string given as argument . Its return value is the root of the Expression Tree.
+
+
+buildExpressionTreeFromInfix
+
+Pseudocode:
+	Procedure buildExpressionTreeFromInfix(S)
+		1) Let Nodes : an stack of type Tree and Operators : an stack of type char
+		2) For each word in S
+			Do 
+				3) If word is an operand push it to Node
+				End If
+				4) If word is an operator. Let C : operator
+					5)	If C = '(' push it to Operators.
+					6)	If C = ')' repeatedly pop from Operators until ')' found and
+					DO
+						7)	call updateExpressionTree()
+						8)	pop from Operators.
+					End Do
+					9)	If C = other operators,repeatedly pop from Operators which has higher or equal precedence than C and
+					Do
+						10)	call updateExpressionTree()
+						11)	push C into Operators
+					End DO
+				End If
+			End Do
+		12)	return the top of Node as the root of the Expression Tree
+			
+	End Procedure buildExpressionTreeFromInfix(S)
+	
+Complexity :
+	Let n := number of word in S
+	Each word will be traverse at most one time 
+	Each word will be inserted to Nodes at most one time
+	Hence the complexity os Order of n [ O(n) ]
+	
+	
+	
+Pseudocode:
+
+	Procedure updateExpressionTree()
+		1) Right	:=  Top node from Nodes. Pop from Nodes.
+		2) Left 	:=  Top node from Nodes. Pop from Nodes.
+		3) root 	:=  Top node from Operators. Pop from Operators.
+		4) make root as the root node of a subtree
+		5) set Left as left child of root
+		6) set Right as Right child of root
+		7) Push root into Nodes.
+	End Procedure updateExpressionTree()
+Complexity :
+	There is not Loop in this procedure
+	Hence the complexity is Order of 1 [ O(1) ]
+	
+Pseudocode:
+	Procedure preOrderTreeTraversal()
+		1) process root
+		2) process Left Child.
+		3) process Right Child.
+	End Procedure preOrderTreeTraversal()
+
+Complexity :
+
+	This is a DFS Style Recursion Function.
+	Let n := number of nodes in the tree.
+	Let v := number of edges in the tree.
+	As this is a tree v is exactly n - 1
+	Each node will be processed exactly one time
+	Each edge will be processed exactly one time.
+	Hence the complexity is O(n + v) = O(n + n - 1) = O(n)
+	
+	
+
+Pseudocode:
+	Procedure reduceExpression()
+		1) If left child = NULL or right child = NULL , then return
+		2) reduceExpression of left child
+		3) reduceExpression of right child
+		4) If current node = operator, and left = operand and right = operand then
+				5) calculate node value according to the operatator.
+				6) delete left and right child
+		   End If
+		5) Else return
+	End Procedure
+	
+Complexity :
+	Same as the above function [ preOrderTreeTraversal ]
+	That is O(n)
+	
+	
+	
+	
+Hence total complexity of the program is O(n) + O(n) + O(n) = O(3n) = O(n)
+	
+	
+- Regards,
+Sohel Hossain Kabir
+	
+	
