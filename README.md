@@ -3,7 +3,7 @@ prefixer
 
 infix notation to prefix notation conversion and reduce as much as possible
 
-<<<<=============================================== Project Goals ===================================================>>>>
+<<<<============= Project Goals ==============>>>>
 
 Given infix notation, convert it to its corresponding prefix notation
 
